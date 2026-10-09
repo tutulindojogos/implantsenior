@@ -647,13 +647,23 @@ body.lb-open { overflow: hidden; }
   .gallery > .g1 { grid-row: span 2; }
   .shot, .g1 .shot { border-radius: 22px; }
   .g1 .shot { border-radius: 80px 22px 22px 22px; }
-  
+}
+
 /* ---------- Tablets ---------- */
 @media (max-width: 960px) {
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 2.75rem; }
   .steps li:nth-child(2)::after { display: none; }
   .signs-card { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr; }
+}
+
+/* ---------- Notebook pequeno / tablet deitado: cabeçalho compacto para o menu caber numa linha ---------- */
+@media (min-width: 881px) and (max-width: 1080px) {
+  .nav { gap: .95rem; }
+  .nav a { white-space: nowrap; }
+  .nav a:not(.btn):not(.nav-phone) { font-size: .95rem; }
+  .nav-cta { padding-inline: 1rem; }
+  .brand-name { font-size: 1.3rem; }
 }
 
 /* ---------- Celular e tablet pequeno ---------- */
