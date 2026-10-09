@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Implant Senior | Implantes dentários em Piracicaba</title>
   <meta name="description" content="Clínica odontológica em Piracicaba especializada em implantes dentários. Avaliação com calma, plano de tratamento explicado e acompanhamento. Agende pelo WhatsApp.">
   <meta name="theme-color" content="#30B5BC">
@@ -14,6 +14,15 @@
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="assets/img/fachada.webp" type="image/webp">
+
+  <!-- As animações de rolagem só se ativam se o JavaScript carregar; se falhar, o conteúdo continua visível. -->
+  <script>
+    document.documentElement.classList.add("js");
+    setTimeout(function () {
+      if (!window.__revealReady) document.documentElement.classList.remove("js");
+    }, 3500);
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +37,14 @@
     "description": "Clínica odontológica especializada em implantes dentários em Piracicaba, SP.",
     "telephone": "+55-19-2532-1060",
     "areaServed": "Piracicaba, SP",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "R. Santa Cruz, 203 - Alto",
+      "addressLocality": "Piracicaba",
+      "addressRegion": "SP",
+      "postalCode": "13419-020",
+      "addressCountry": "BR"
+    },
     "sameAs": [
       "https://www.instagram.com/implant.senior/",
       "https://www.facebook.com/ImplantSeniorPiracicaba/"
@@ -54,21 +71,40 @@
       <nav class="nav" id="menu" aria-label="Principal">
         <a href="#tratamentos">Tratamentos</a>
         <a href="#como-funciona">Como funciona</a>
-        <a href="#cuidado">Nosso cuidado</a>
+        <a href="#clinica">A clínica</a>
         <a href="#duvidas">Dúvidas</a>
         <a href="#contato">Contato</a>
         <a class="btn btn--primary btn--small nav-cta" href="https://wa.me/5519998221610?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação</a>
+        <a class="nav-phone" href="tel:+551925321060">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+          (19) 2532-1060
+        </a>
       </nav>
     </div>
+    <div class="progress" aria-hidden="true"></div>
   </header>
 
   <main id="conteudo">
 
     <!-- ========== HERO ========== -->
     <section class="hero">
+      <!-- fita decorativa inspirada na logo, desenhada ao carregar -->
+      <svg class="hero-ribbon" viewBox="0 0 700 600" preserveAspectRatio="xMinYMax slice" aria-hidden="true">
+        <path pathLength="1" d="M-20,530 C70,440 170,510 235,440 C305,362 225,278 163,326 C112,366 162,440 255,430 C350,420 430,336 535,368 C600,388 650,440 720,452"/>
+      </svg>
+
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <h1>Volte a comer, falar e sorrir com segurança.</h1>
+          <h1>
+            <span class="word" style="--i:0">Volte</span>
+            <span class="word" style="--i:1">a</span>
+            <span class="word" style="--i:2">comer,</span>
+            <span class="word" style="--i:3">falar</span>
+            <span class="word" style="--i:4">e</span>
+            <span class="word" style="--i:5">sorrir</span>
+            <span class="word" style="--i:6">com</span>
+            <span class="word" style="--i:7">segurança.</span>
+          </h1>
           <p class="lead">Na Implant Senior, em Piracicaba, você é atendido com calma, recebe explicações claras e segue um plano de tratamento pensado para o seu caso.</p>
 
           <div class="hero-actions">
@@ -89,17 +125,24 @@
           </ul>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
+        <div class="hero-visual" data-parallax="-0.05">
           <div class="hero-panel">
+            <img class="hero-photo" src="assets/img/fachada.webp" alt="Fachada da clínica Implant Senior, na Rua Santa Cruz, em Piracicaba" width="1360" height="1020" fetchpriority="high">
+          </div>
+          <div class="hero-badge" aria-hidden="true">
             <img class="hero-tooth" src="assets/tooth-white.png" alt="" width="520" height="520">
           </div>
-          <a class="hero-chip" href="https://wa.me/5519998221610" target="_blank" rel="noopener" tabindex="-1">
+          <a class="hero-chip hero-chip--wa" href="https://wa.me/5519998221610" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
             <svg class="icon" viewBox="0 0 24 24"><use href="#i-whatsapp"/></svg>
             <span>
               <strong>Fale pelo WhatsApp</strong>
               (19) 99822-1610
             </span>
           </a>
+          <div class="hero-chip hero-chip--loc" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-pin"/></svg>
+            <span><strong>Piracicaba, SP</strong></span>
+          </div>
         </div>
       </div>
 
@@ -108,62 +151,148 @@
       </svg>
     </section>
 
+    <!-- ========== FAIXA ANIMADA ========== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <ul class="marquee-group">
+          <li>Implantes dentários</li>
+          <li>Prótese fixa sobre implantes</li>
+          <li>Dentadura com mais firmeza</li>
+          <li>Enxerto e preparo do osso</li>
+          <li>Manutenção e acompanhamento</li>
+        </ul>
+        <ul class="marquee-group">
+          <li>Implantes dentários</li>
+          <li>Prótese fixa sobre implantes</li>
+          <li>Dentadura com mais firmeza</li>
+          <li>Enxerto e preparo do osso</li>
+          <li>Manutenção e acompanhamento</li>
+        </ul>
+      </div>
+    </div>
+
     <!-- ========== TRATAMENTOS ========== -->
     <section class="section" id="tratamentos">
       <div class="wrap split">
-        <div class="split-head">
+        <div class="split-head" data-reveal="left">
           <h2>Tratamentos para devolver função e conforto</h2>
-          <p>Cada sorriso pede uma solução diferente. Na avaliação, o dentista indica o caminho mais adequado para você.</p>
+          <p>Cada sorriso pede uma solução diferente. Na avaliação, o dentista indica o caminho mais adequado para você. Toque em um tratamento para perguntar pelo WhatsApp.</p>
           <a class="btn btn--primary" href="https://wa.me/5519998221610?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20tratamentos." target="_blank" rel="noopener">Perguntar pelo WhatsApp</a>
         </div>
 
-        <ul class="treatments">
-          <li>
-            <h3>Implantes dentários</h3>
-            <p>Substituem a raiz do dente perdido e sustentam uma coroa firme, para mastigar e sorrir com naturalidade.</p>
+        <ul class="treatments" data-stagger>
+          <li data-reveal="rise">
+            <a href="https://wa.me/5519998221610?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20implantes%20dent%C3%A1rios." target="_blank" rel="noopener">
+              <span class="t-body">
+                <h3>Implantes dentários</h3>
+                <p>Substituem a raiz do dente perdido e sustentam uma coroa firme, para mastigar e sorrir com naturalidade.</p>
+              </span>
+              <span class="t-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="sr-only">Perguntar pelo WhatsApp</span>
+            </a>
           </li>
-          <li>
-            <h3>Prótese fixa sobre implantes</h3>
-            <p>Reposição de vários dentes, ou de todos, com uma prótese fixa apoiada em implantes.</p>
+          <li data-reveal="rise">
+            <a href="https://wa.me/5519998221610?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20pr%C3%B3tese%20fixa%20sobre%20implantes." target="_blank" rel="noopener">
+              <span class="t-body">
+                <h3>Prótese fixa sobre implantes</h3>
+                <p>Reposição de vários dentes, ou de todos, com uma prótese fixa apoiada em implantes.</p>
+              </span>
+              <span class="t-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="sr-only">Perguntar pelo WhatsApp</span>
+            </a>
           </li>
-          <li>
-            <h3>Dentadura com mais firmeza</h3>
-            <p>Para quem usa dentadura e quer menos movimento e mais segurança ao comer e falar.</p>
+          <li data-reveal="rise">
+            <a href="https://wa.me/5519998221610?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20dentadura%20com%20mais%20firmeza." target="_blank" rel="noopener">
+              <span class="t-body">
+                <h3>Dentadura com mais firmeza</h3>
+                <p>Para quem usa dentadura e quer menos movimento e mais segurança ao comer e falar.</p>
+              </span>
+              <span class="t-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="sr-only">Perguntar pelo WhatsApp</span>
+            </a>
           </li>
-          <li>
-            <h3>Enxerto e preparo do osso</h3>
-            <p>Quando falta osso, o dentista avalia procedimentos de preparo para tornar o implante possível.</p>
+          <li data-reveal="rise">
+            <a href="https://wa.me/5519998221610?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20enxerto%20e%20preparo%20do%20osso." target="_blank" rel="noopener">
+              <span class="t-body">
+                <h3>Enxerto e preparo do osso</h3>
+                <p>Quando falta osso, o dentista avalia procedimentos de preparo para tornar o implante possível.</p>
+              </span>
+              <span class="t-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="sr-only">Perguntar pelo WhatsApp</span>
+            </a>
           </li>
-          <li>
-            <h3>Manutenção e acompanhamento</h3>
-            <p>Retornos periódicos para cuidar dos implantes, da gengiva e da saúde da boca como um todo.</p>
+          <li data-reveal="rise">
+            <a href="https://wa.me/5519998221610?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20manuten%C3%A7%C3%A3o%20e%20acompanhamento." target="_blank" rel="noopener">
+              <span class="t-body">
+                <h3>Manutenção e acompanhamento</h3>
+                <p>Retornos periódicos para cuidar dos implantes, da gengiva e da saúde da boca como um todo.</p>
+              </span>
+              <span class="t-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              <span class="sr-only">Perguntar pelo WhatsApp</span>
+            </a>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- ========== COMO FUNCIONA ========== -->
-    <section class="section section--mist" id="como-funciona">
+    <!-- ========== SINAIS ========== -->
+    <section class="section section--mist" id="sinais">
       <div class="wrap">
-        <div class="section-head">
+        <div class="signs-card" data-reveal="pop">
+          <div class="signs-head">
+            <h2>Sinais de que vale uma avaliação</h2>
+            <p>Se você se identifica com algum destes pontos, vale conversar com o dentista. Quanto antes você entender suas opções, mais tranquilo fica decidir.</p>
+            <a class="btn btn--primary" href="https://wa.me/5519998221610?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Quero uma avaliação</a>
+          </div>
+
+          <ul class="signs-list" data-stagger>
+            <li data-reveal="rise">
+              <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              Faltam um ou mais dentes e mastigar ficou difícil.
+            </li>
+            <li data-reveal="rise">
+              <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              A dentadura se mexe, machuca ou faz você evitar certos alimentos.
+            </li>
+            <li data-reveal="rise">
+              <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              Você deixa de sorrir ou de conversar por vergonha dos dentes.
+            </li>
+            <li data-reveal="rise">
+              <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              Há um dente mole, quebrado ou que o dentista disse não ter conserto.
+            </li>
+            <li data-reveal="rise">
+              <span class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+              Faz muito tempo que você não passa por uma avaliação da boca.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== COMO FUNCIONA ========== -->
+    <section class="section" id="como-funciona">
+      <div class="wrap">
+        <div class="section-head" data-reveal="wipe">
           <h2>Como funciona o atendimento</h2>
           <p>Um caminho simples, com você bem informado em cada etapa.</p>
         </div>
 
-        <ol class="steps">
-          <li>
+        <ol class="steps" data-stagger>
+          <li data-reveal="rise">
             <h3>Você chama no WhatsApp</h3>
             <p>Conte o que está sentindo e escolha o melhor horário para a avaliação.</p>
           </li>
-          <li>
+          <li data-reveal="rise">
             <h3>Avaliação do seu caso</h3>
             <p>O dentista examina sua boca, conversa sobre seu histórico e solicita exames, se necessário.</p>
           </li>
-          <li>
+          <li data-reveal="rise">
             <h3>Plano de tratamento</h3>
             <p>Você recebe as opções explicadas com clareza, incluindo etapas e prazos estimados.</p>
           </li>
-          <li>
+          <li data-reveal="rise">
             <h3>Tratamento e acompanhamento</h3>
             <p>O tratamento é realizado com orientação completa, e os retornos garantem a evolução segura.</p>
           </li>
@@ -171,24 +300,67 @@
       </div>
     </section>
 
+    <!-- ========== A CLÍNICA ========== -->
+    <section class="section section--mist" id="clinica">
+      <div class="wrap">
+        <div class="section-head" data-reveal="wipe">
+          <h2>Conheça a clínica</h2>
+          <p>Um espaço pensado para você se sentir à vontade desde a chegada. Toque em uma foto para ampliar.</p>
+        </div>
+
+        <ul class="gallery" data-stagger>
+          <li class="g1" data-reveal="pop">
+            <button class="shot" type="button">
+              <img src="assets/img/fachada.webp" alt="Fachada turquesa da Implant Senior, com o nome da clínica e o telefone na parede" width="1360" height="1020" loading="lazy">
+            </button>
+          </li>
+          <li class="g2" data-reveal="pop">
+            <button class="shot" type="button">
+              <img src="assets/img/consultorio-jardim.webp" alt="Consultório com cadeira odontológica e uma janela de vidro com vista para o jardim" width="1360" height="1020" loading="lazy">
+            </button>
+          </li>
+          <li class="g3" data-reveal="pop">
+            <button class="shot" type="button">
+              <img src="assets/img/consultorio-azulejo.webp" alt="Consultório com parede de losangos em tons de turquesa e cadeira odontológica verde" width="902" height="918" loading="lazy">
+            </button>
+          </li>
+          <li class="g4" data-reveal="pop">
+            <button class="shot" type="button">
+              <img src="assets/img/recepcao.webp" alt="Recepção com balcão de madeira, poltronas e o logotipo da clínica na parede" width="1360" height="1020" loading="lazy">
+            </button>
+          </li>
+          <li class="g5" data-reveal="pop">
+            <button class="shot" type="button">
+              <img src="assets/img/sala-poltronas.webp" alt="Sala com duas poltronas, televisão e decoração em tons claros" width="1360" height="1020" loading="lazy">
+            </button>
+          </li>
+          <li class="g6" data-reveal="pop">
+            <button class="shot" type="button">
+              <img src="assets/img/consultorio-exames.webp" alt="Consultório com cadeira odontológica verde e uma tela na parede para visualizar exames" width="1360" height="1020" loading="lazy">
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- ========== NOSSO CUIDADO ========== -->
     <section class="section section--ink" id="cuidado">
-      <img class="watermark" src="assets/tooth-white.png" alt="" aria-hidden="true">
+      <img class="watermark" src="assets/tooth-white.png" alt="" aria-hidden="true" data-parallax="0.09">
       <div class="wrap split">
-        <div class="split-head">
+        <div class="split-head" data-reveal="wipe">
           <h2>Um cuidado que respeita o seu tempo</h2>
         </div>
 
-        <div class="care">
-          <div>
+        <div class="care" data-stagger>
+          <div data-reveal="left">
             <h3>Escuta primeiro</h3>
             <p>Antes de indicar qualquer tratamento, ouvimos suas queixas, suas dúvidas e o que você espera do resultado.</p>
           </div>
-          <div>
+          <div data-reveal="left">
             <h3>Linguagem clara</h3>
             <p>Explicamos cada etapa sem termos difíceis, para que você decida com tranquilidade.</p>
           </div>
-          <div>
+          <div data-reveal="left">
             <h3>Conforto em cada consulta</h3>
             <p>Atendimento no seu ritmo, com atenção às necessidades de cada paciente.</p>
           </div>
@@ -199,29 +371,30 @@
     <!-- ========== DÚVIDAS ========== -->
     <section class="section" id="duvidas">
       <div class="wrap split">
-        <div class="split-head">
+        <div class="split-head" data-reveal="left">
           <h2>Dúvidas frequentes</h2>
           <p>Não encontrou o que procurava? Chame a gente, será um prazer ajudar.</p>
+          <a class="btn btn--ghost" href="https://wa.me/5519998221610?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida." target="_blank" rel="noopener">Tirar uma dúvida</a>
         </div>
 
-        <div class="faq">
-          <details>
+        <div class="faq" data-stagger>
+          <details data-reveal="rise">
             <summary>Existe idade limite para colocar implante?</summary>
             <p>Não existe uma idade limite fixa. O que define a indicação é a sua saúde geral e a condição do osso e da gengiva, avaliadas na consulta.</p>
           </details>
-          <details>
+          <details data-reveal="rise">
             <summary>Uso dentadura. Posso trocar por implantes?</summary>
             <p>Em muitos casos é possível fixar ou estabilizar a prótese sobre implantes. O dentista avalia o osso disponível e indica a melhor opção.</p>
           </details>
-          <details>
+          <details data-reveal="rise">
             <summary>O procedimento dói?</summary>
             <p>A cirurgia é feita com anestesia, e o dentista orienta os cuidados e as medicações para o período de recuperação.</p>
           </details>
-          <details>
+          <details data-reveal="rise">
             <summary>O que levar na primeira consulta?</summary>
             <p>Se tiver, leve exames recentes, radiografias e a lista dos remédios que usa. Isso ajuda no planejamento. Se não tiver, a equipe orienta você na avaliação.</p>
           </details>
-          <details>
+          <details data-reveal="rise">
             <summary>Como agendo minha avaliação?</summary>
             <p>Pelo WhatsApp (19) 99822-1610 ou pelo telefone fixo (19) 2532-1060.</p>
           </details>
@@ -231,8 +404,9 @@
 
     <!-- ========== CONTATO ========== -->
     <section class="section section--teal" id="contato">
+      <img class="watermark watermark--contact" src="assets/tooth-white.png" alt="" aria-hidden="true" data-parallax="0.07">
       <div class="wrap contact">
-        <div class="contact-main">
+        <div class="contact-main" data-reveal="left">
           <h2>Vamos conversar sobre o seu sorriso?</h2>
           <p class="lead">Escolha como prefere falar com a gente. Estamos em Piracicaba, SP.</p>
           <div class="hero-actions">
@@ -247,25 +421,38 @@
           </div>
         </div>
 
-        <!-- Para incluir o endereço, adicione um item na lista abaixo -->
-        <ul class="contact-list">
-          <li>
+        <ul class="contact-list" data-stagger>
+          <li data-reveal="right">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>
+            <span><small>Endereço</small><a href="https://www.google.com/maps/search/?api=1&amp;query=R.+Santa+Cruz,+203+-+Alto,+Piracicaba+-+SP,+13419-020" target="_blank" rel="noopener">R. Santa Cruz, 203 – Alto<br>Piracicaba – SP, 13419-020</a></span>
+          </li>
+          <li data-reveal="right">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
             <span><small>Telefone fixo</small><a href="tel:+551925321060">(19) 2532-1060</a></span>
           </li>
-          <li>
+          <li data-reveal="right">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
             <span><small>WhatsApp</small><a href="https://wa.me/5519998221610" target="_blank" rel="noopener">(19) 99822-1610</a></span>
           </li>
-          <li>
+          <li data-reveal="right">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-instagram"/></svg>
             <span><small>Instagram</small><a href="https://www.instagram.com/implant.senior/" target="_blank" rel="noopener">@implant.senior</a></span>
           </li>
-          <li>
+          <li data-reveal="right">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-facebook"/></svg>
             <span><small>Facebook</small><a href="https://www.facebook.com/ImplantSeniorPiracicaba/" target="_blank" rel="noopener">Implant Senior Piracicaba</a></span>
           </li>
         </ul>
+      </div>
+
+      <div class="wrap map-wrap">
+        <div class="map" data-reveal="pop">
+          <iframe title="Mapa com a localização da Implant Senior, na Rua Santa Cruz, 203, em Piracicaba" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=R.%20Santa%20Cruz%2C%20203%20-%20Alto%2C%20Piracicaba%20-%20SP%2C%2013419-020&amp;z=16&amp;output=embed"></iframe>
+        </div>
+        <a class="btn btn--primary map-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Santa+Cruz,+203+-+Alto,+Piracicaba+-+SP,+13419-020" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-pin"/></svg>
+          Como chegar
+        </a>
       </div>
     </section>
   </main>
@@ -273,20 +460,73 @@
   <!-- ========== RODAPÉ ========== -->
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <a class="brand brand--light" href="#topo" aria-label="Implant Senior, voltar ao topo">
-        <img src="assets/tooth-white.png" alt="" width="40" height="40">
-        <span class="brand-name">Implant Senior</span>
-      </a>
-      <p>Clínica odontológica em Piracicaba, SP</p>
-      <!-- Inclua aqui o nome do responsável técnico e o número do CRO, conforme exigência do conselho de odontologia. -->
-      <p class="copy">© <span id="ano">2026</span> Implant Senior. Todos os direitos reservados.</p>
+      <div class="footer-brand">
+        <a class="brand brand--light" href="#topo" aria-label="Implant Senior, voltar ao topo">
+          <img src="assets/tooth-white.png" alt="" width="40" height="40">
+          <span class="brand-name">Implant Senior</span>
+        </a>
+        <address>R. Santa Cruz, 203 – Alto<br>Piracicaba – SP, 13419-020</address>
+      </div>
+
+      <nav class="footer-nav" aria-label="Rodapé">
+        <a href="#tratamentos">Tratamentos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#clinica">A clínica</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="footer-social">
+        <a href="https://www.instagram.com/implant.senior/" target="_blank" rel="noopener" aria-label="Instagram da Implant Senior">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-instagram"/></svg>
+        </a>
+        <a href="https://www.facebook.com/ImplantSeniorPiracicaba/" target="_blank" rel="noopener" aria-label="Facebook da Implant Senior">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-facebook"/></svg>
+        </a>
+        <a href="https://wa.me/5519998221610" target="_blank" rel="noopener" aria-label="WhatsApp da Implant Senior">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+        </a>
+      </div>
+
+      <div class="copy">
+        <p>Responsável técnico: Dr. Paulo Gazolla, CRO/SP 119.158. Clínica registrada no CRO-CL 17302.</p>
+        <p>© <span id="ano">2026</span> Implant Senior. Todos os direitos reservados.</p>
+      </div>
     </div>
   </footer>
 
-  <!-- Botão flutuante de WhatsApp -->
+  <!-- Botão flutuante de WhatsApp (computador) -->
   <a class="fab" href="https://wa.me/5519998221610?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
   </a>
+
+  <!-- Barra fixa de contato (celular) -->
+  <div class="mobile-bar">
+    <a class="btn btn--wa" href="https://wa.me/5519998221610?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+      WhatsApp
+    </a>
+    <a class="btn btn--primary" href="tel:+551925321060">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg>
+      Ligar
+    </a>
+  </div>
+
+  <!-- Foto ampliada da galeria -->
+  <dialog class="lightbox" aria-label="Foto ampliada">
+    <figure>
+      <img alt="">
+    </figure>
+    <button class="lb-btn lb-close" type="button" aria-label="Fechar foto">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Foto anterior">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <button class="lb-btn lb-next" type="button" aria-label="Próxima foto">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </dialog>
 
   <!-- Ícones -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -295,6 +535,7 @@
       <g id="i-whatsapp" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/><path d="M9.2 8.6c.2 2.4 2.6 4.8 5 5l1.1-1.1-1.7-1-.8.6a3.2 3.2 0 0 1-1.6-1.6l.6-.8-1-1.7z"/></g>
       <g id="i-instagram" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></g>
       <g id="i-facebook" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></g>
+      <g id="i-pin" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></g>
     </defs>
   </svg>
 
