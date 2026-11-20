@@ -776,5 +776,5 @@ body.lb-open { overflow: hidden; }
   }
   .marquee-track { animation: none; }
   .marquee { overflow-x: auto; }
-  .hero-ribbon path { stroke-dashoffset: 0; }
+  .hero-ribbon path { stroke-dashoffset: 0; }a
 }
